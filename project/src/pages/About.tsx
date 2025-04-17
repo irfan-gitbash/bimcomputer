@@ -36,7 +36,7 @@ const About = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">Tentang Bima Computer</h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-400 ">
             Melayani dengan Profesional sejak 2010
           </p>
         </div>
@@ -67,7 +67,9 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="flex items-center mb-4">
                 <Target className="text-blue-600 w-8 h-8 mr-3" />
-                <h3 className="text-2xl font-semibold">Visi</h3>
+                <h3 className="text-2xl font-semibold dark:text-gray-800">
+                  Visi
+                </h3>
               </div>
               <p className="text-gray-600">
                 Menjadi penyedia layanan teknologi terpercaya dan terdepan di
@@ -78,7 +80,9 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="flex items-center mb-4">
                 <Target className="text-blue-600 w-8 h-8 mr-3" />
-                <h3 className="text-2xl font-semibold">Misi</h3>
+                <h3 className="text-2xl font-semibold dark:text-gray-800">
+                  Misi
+                </h3>
               </div>
               <ul className="text-gray-600 space-y-2">
                 <li>
@@ -126,7 +130,9 @@ const About = () => {
             {certifications.map((cert, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
                 <cert.icon className="text-blue-600 w-12 h-12 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 dark:text-gray-800">
+                  {cert.title}
+                </h3>
                 <p className="text-gray-600">Diperoleh tahun {cert.year}</p>
               </div>
             ))}

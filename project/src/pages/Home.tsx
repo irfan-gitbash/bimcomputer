@@ -101,11 +101,13 @@ const Home = () => {
       </div>
 
       {/* Quick Links */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-gray-50 dark:bg-gray-800 dark:text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-xl font-semibold mb-2">Service Laptop</h3>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center ">
+              <h3 className="text-xl font-semibold mb-2 dark:text-gray-800">
+                Service Laptop
+              </h3>
               <p className="text-gray-600 mb-4">
                 Perbaikan hardware & software oleh teknisi ahli
               </p>
@@ -118,7 +120,9 @@ const Home = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <h3 className="text-xl font-semibold mb-2">Konsultasi Gratis</h3>
+              <h3 className="text-xl font-semibold mb-2 dark:text-gray-800">
+                Konsultasi Gratis
+              </h3>
               <p className="text-gray-600 mb-4">
                 Konsultasikan masalah komputer Anda
               </p>
@@ -151,7 +155,9 @@ const Home = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+                  <h3 className="text-lg font-semibold mb-2 dark:text-gray-800">
+                    {product.name}
+                  </h3>
                   <p className="text-blue-600 font-semibold">
                     Rp {product.price.toLocaleString("id-ID")}
                   </p>
@@ -166,7 +172,7 @@ const Home = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="py-16 bg-gray-50">
+      <div className="py-16 bg-gray-50 dark:bg-gray-800 dark:text-whit">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-8 text-center">
             Testimoni Pelanggan
@@ -187,7 +193,9 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-4">"{testimonial.comment}"</p>
-                <p className="font-semibold">{testimonial.name}</p>
+                <p className="font-semibold text-gray-600">
+                  {testimonial.name}
+                </p>
               </div>
             ))}
           </div>

@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
-import { PenTool as Tool, Monitor, HardDrive, Cpu, RefreshCw, Database, Calendar } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  PenTool as Tool,
+  Monitor,
+  HardDrive,
+  Cpu,
+  RefreshCw,
+  Database,
+  Calendar,
+} from "lucide-react";
 
 const Services = () => {
-  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedDate, setSelectedDate] = useState("");
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    deviceType: '',
-    issue: '',
-    preferredDate: '',
+    name: "",
+    phone: "",
+    deviceType: "",
+    issue: "",
+    preferredDate: "",
   });
 
   const services = [
     {
       icon: Monitor,
       title: "Service Laptop",
-      description: "Perbaikan berbagai masalah laptop, dari hardware hingga software",
+      description:
+        "Perbaikan berbagai masalah laptop, dari hardware hingga software",
       price: "Mulai dari Rp 200.000",
       details: [
         "Ganti LCD",
         "Perbaikan Keyboard",
         "Upgrade RAM/SSD",
-        "Service Motherboard"
-      ]
+        "Service Motherboard",
+      ],
     },
     {
       icon: HardDrive,
@@ -33,8 +42,8 @@ const Services = () => {
         "Upgrade Komponen",
         "Perbaikan Hardware",
         "Optimasi Sistem",
-        "Perakitan PC Baru"
-      ]
+        "Perakitan PC Baru",
+      ],
     },
     {
       icon: Cpu,
@@ -45,8 +54,8 @@ const Services = () => {
         "Pembersihan Komponen",
         "Ganti Thermal Paste",
         "Optimasi Pendinginan",
-        "Cable Management"
-      ]
+        "Cable Management",
+      ],
     },
     {
       icon: RefreshCw,
@@ -57,8 +66,8 @@ const Services = () => {
         "Install Windows/Linux",
         "Backup Data",
         "Install Software",
-        "Optimasi Sistem"
-      ]
+        "Optimasi Sistem",
+      ],
     },
     {
       icon: Database,
@@ -69,8 +78,8 @@ const Services = () => {
         "Recovery Hard Disk",
         "Recovery SSD",
         "Recovery Flash Drive",
-        "Recovery Memory Card"
-      ]
+        "Recovery Memory Card",
+      ],
     },
     {
       icon: Tool,
@@ -81,9 +90,9 @@ const Services = () => {
         "Pembersihan Rutin",
         "Update Sistem",
         "Optimasi Performa",
-        "Backup Data"
-      ]
-    }
+        "Backup Data",
+      ],
+    },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -92,19 +101,23 @@ const Services = () => {
     console.log(formData);
     // Reset form
     setFormData({
-      name: '',
-      phone: '',
-      deviceType: '',
-      issue: '',
-      preferredDate: '',
+      name: "",
+      phone: "",
+      deviceType: "",
+      issue: "",
+      preferredDate: "",
     });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -114,7 +127,9 @@ const Services = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">Layanan Service</h1>
-          <p className="text-xl text-gray-600">Solusi Profesional untuk Perangkat Anda</p>
+          <p className="text-xl text-gray-600">
+            Solusi Profesional untuk Perangkat Anda
+          </p>
         </div>
 
         {/* Services Grid */}
@@ -122,12 +137,18 @@ const Services = () => {
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6">
               <service.icon className="text-blue-600 w-12 h-12 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 dark:text-gray-800">
+                {service.title}
+              </h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <p className="text-blue-600 font-semibold mb-4">{service.price}</p>
+              <p className="text-blue-600 font-semibold mb-4">
+                {service.price}
+              </p>
               <ul className="space-y-2">
                 {service.details.map((detail, idx) => (
-                  <li key={idx} className="text-gray-600">• {detail}</li>
+                  <li key={idx} className="text-gray-600">
+                    • {detail}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -227,19 +248,36 @@ const Services = () => {
 
         {/* FAQ Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold mb-8 text black">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-4">
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Berapa lama waktu pengerjaan service?</h3>
-              <p className="text-gray-600">Waktu pengerjaan bervariasi tergantung jenis kerusakan, umumnya 1-3 hari kerja.</p>
+              <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                Berapa lama waktu pengerjaan service?
+              </h3>
+              <p className="text-gray-600">
+                Waktu pengerjaan bervariasi tergantung jenis kerusakan, umumnya
+                1-3 hari kerja.
+              </p>
             </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Apakah ada garansi service?</h3>
-              <p className="text-gray-600">Ya, kami memberikan garansi service selama 30 hari untuk setiap perbaikan.</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-800">
+              <h3 className="text-lg font-semibold mb-2">
+                Apakah ada garansi service?
+              </h3>
+              <p className="text-gray-600">
+                Ya, kami memberikan garansi service selama 30 hari untuk setiap
+                perbaikan.
+              </p>
             </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Bagaimana jika spare part tidak tersedia?</h3>
-              <p className="text-gray-600">Kami akan mencarikan alternatif atau memesankan spare part yang dibutuhkan.</p>
+            <div className="bg-white rounded-lg shadow-lg p-6 text-gray-800">
+              <h3 className="text-lg font-semibold mb-2">
+                Bagaimana jika spare part tidak tersedia?
+              </h3>
+              <p className="text-gray-600">
+                Kami akan mencarikan alternatif atau memesankan spare part yang
+                dibutuhkan.
+              </p>
             </div>
           </div>
         </div>
